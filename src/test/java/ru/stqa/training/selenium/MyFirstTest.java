@@ -27,6 +27,14 @@ public class MyFirstTest  {
         driver.findElement(By.xpath("//a[contains(@href,'imghp')]"));
     }
 
+    @Test
+    public void login (){
+        driver.get("http://localhost/litecart/admin/");
+        driver.findElement(By.name("username")).sendKeys("admin");
+        driver.findElement(By.name("password")).sendKeys("admin");
+        driver.findElement(By.name("login")).click();
+    }
+
     @After
     public void stop(){
         driver.quit();
